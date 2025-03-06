@@ -138,7 +138,6 @@ Landroid/nfc/NdefRecord;->toMimeType()Ljava/lang/String;,public-api,system-api,t
 Landroid/nfc/NdefRecord;->toString()Ljava/lang/String;,core-platform-api,public-api,system-api,test-api
 Landroid/nfc/NdefRecord;->toUri()Landroid/net/Uri;,public-api,system-api,test-api
 Landroid/nfc/NdefRecord;->writeToParcel(Landroid/os/Parcel;I)V,public-api,system-api,test-api
-Landroid/nfc/NfcActivityManager$NfcActivityState;->toString()Ljava/lang/String;,core-platform-api,public-api,system-api,test-api
 Landroid/nfc/NfcActivityManager;->onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V,public-api,system-api,test-api
 Landroid/nfc/NfcActivityManager;->onActivityDestroyed(Landroid/app/Activity;)V,public-api,system-api,test-api
 Landroid/nfc/NfcActivityManager;->onActivityPaused(Landroid/app/Activity;)V,public-api,system-api,test-api
@@ -146,6 +145,7 @@ Landroid/nfc/NfcActivityManager;->onActivityResumed(Landroid/app/Activity;)V,pub
 Landroid/nfc/NfcActivityManager;->onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V,public-api,system-api,test-api
 Landroid/nfc/NfcActivityManager;->onActivityStarted(Landroid/app/Activity;)V,public-api,system-api,test-api
 Landroid/nfc/NfcActivityManager;->onActivityStopped(Landroid/app/Activity;)V,public-api,system-api,test-api
+Landroid/nfc/NfcActivityState;->toString()Ljava/lang/String;,core-platform-api,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter$1$1;->run()V,core-platform-api,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter$ControllerAlwaysOnListener;->onControllerAlwaysOnChanged(Z)V,system-api,test-api
 Landroid/nfc/NfcAdapter$CreateBeamUrisCallback;->createBeamUris(Landroid/nfc/NfcEvent;)[Landroid/net/Uri;,public-api,system-api,test-api
@@ -401,6 +401,8 @@ Landroid/nfc/NfcRoutingTableEntry;->getRouteType()I,system-api,test-api
 Landroid/nfc/NfcRoutingTableEntry;->getType()I,system-api,test-api
 Landroid/nfc/NfcVendorNciCallbackListener$$ExternalSyntheticLambda0;->run()V,core-platform-api,public-api,system-api,test-api
 Landroid/nfc/NfcVendorNciCallbackListener$$ExternalSyntheticLambda1;->run()V,core-platform-api,public-api,system-api,test-api
+Landroid/nfc/NfcVendorNciCallbackListener$1$1;->run()V,core-platform-api,public-api,system-api,test-api
+Landroid/nfc/NfcVendorNciCallbackListener$1;->binderDied()V,public-api,system-api,test-api
 Landroid/nfc/NfcWlcStateListener$$ExternalSyntheticLambda0;->run()V,core-platform-api,public-api,system-api,test-api
 Landroid/nfc/OemLogItems$1;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;,public-api,system-api,test-api
 Landroid/nfc/OemLogItems$1;->newArray(I)[Ljava/lang/Object;,public-api,system-api,test-api
@@ -503,6 +505,8 @@ Landroid/nfc/WlcListenerDeviceInfo;->describeContents()I,public-api,system-api,t
 Landroid/nfc/WlcListenerDeviceInfo;->writeToParcel(Landroid/os/Parcel;I)V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/CardEmulation$1$$ExternalSyntheticLambda4;->accept(Ljava/lang/Object;Ljava/lang/Object;)V,core-platform-api,public-api,system-api,test-api
 Landroid/nfc/cardemulation/CardEmulation$1$$ExternalSyntheticLambda7;->run()V,core-platform-api,public-api,system-api,test-api
+Landroid/nfc/cardemulation/CardEmulation$2$1;->run()V,core-platform-api,public-api,system-api,test-api
+Landroid/nfc/cardemulation/CardEmulation$2;->binderDied()V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/CardEmulation$NfcEventCallback;->onAidConflictOccurred(Ljava/lang/String;)V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/CardEmulation$NfcEventCallback;->onAidNotRouted(Ljava/lang/String;)V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/CardEmulation$NfcEventCallback;->onInternalErrorReported(I)V,public-api,system-api,test-api
@@ -581,7 +585,6 @@ Landroid/nfc/cardemulation/HostApduService;->onDeactivated(I)V,public-api,system
 Landroid/nfc/cardemulation/HostApduService;->processCommandApdu([BLandroid/os/Bundle;)[B,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostApduService;->processPollingFrames(Ljava/util/List;)V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostApduService;->sendResponseApdu([B)V,public-api,system-api,test-api
-Landroid/nfc/cardemulation/HostNfcFService$MsgHandler;->handleMessage(Landroid/os/Message;)V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostNfcFService;-><init>()V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostNfcFService;->DEACTIVATION_LINK_LOSS:I,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostNfcFService;->SERVICE_INTERFACE:Ljava/lang/String;,public-api,system-api,test-api
@@ -590,6 +593,7 @@ Landroid/nfc/cardemulation/HostNfcFService;->onBind(Landroid/content/Intent;)Lan
 Landroid/nfc/cardemulation/HostNfcFService;->onDeactivated(I)V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostNfcFService;->processNfcFPacket([BLandroid/os/Bundle;)[B,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostNfcFService;->sendResponsePacket([B)V,public-api,system-api,test-api
+Landroid/nfc/cardemulation/HostNfcFServiceMsgHandler;->handleMessage(Landroid/os/Message;)V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/NfcFCardEmulation;->disableService(Landroid/app/Activity;)Z,public-api,system-api,test-api
 Landroid/nfc/cardemulation/NfcFCardEmulation;->enableService(Landroid/app/Activity;Landroid/content/ComponentName;)Z,public-api,system-api,test-api
 Landroid/nfc/cardemulation/NfcFCardEmulation;->getInstance(Landroid/nfc/NfcAdapter;)Landroid/nfc/cardemulation/NfcFCardEmulation;,public-api,system-api,test-api
@@ -765,6 +769,7 @@ Landroid/nfc/tech/TagTechnology;->close()V,core-platform-api,public-api,system-a
 Landroid/nfc/tech/TagTechnology;->connect()V,public-api,system-api,test-api
 Landroid/nfc/tech/TagTechnology;->getTag()Landroid/nfc/Tag;,public-api,system-api,test-api
 Landroid/nfc/tech/TagTechnology;->isConnected()Z,public-api,system-api,test-api
+Lcom/android/nfc/module/flags/CustomFeatureFlags$$ExternalSyntheticLambda0;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda0;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda10;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda11;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
@@ -782,7 +787,6 @@ Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda21;->t
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda22;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda23;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda24;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
-Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda25;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda2;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda3;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda4;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
@@ -843,6 +847,8 @@ Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheti
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda54;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda55;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda56;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
+Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda57;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
+Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda58;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda5;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda6;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda7;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api

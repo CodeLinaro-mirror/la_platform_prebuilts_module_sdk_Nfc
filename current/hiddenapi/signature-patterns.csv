@@ -23,8 +23,10 @@ android/nfc/ITagRemovedCallback
 android/nfc/NdefMessage
 android/nfc/NdefRecord
 android/nfc/NfcActivityManager
+android/nfc/NfcActivityState
 android/nfc/NfcAdapter
 android/nfc/NfcAntennaInfo
+android/nfc/NfcApplicationState
 android/nfc/NfcControllerAlwaysOnListener
 android/nfc/NfcEvent
 android/nfc/NfcFrameworkInitializer
@@ -51,6 +53,7 @@ android/nfc/WlcListenerDeviceInfo
 android/nfc/cardemulation/CardEmulation
 android/nfc/cardemulation/HostApduService
 android/nfc/cardemulation/HostNfcFService
+android/nfc/cardemulation/HostNfcFServiceMsgHandler
 android/nfc/cardemulation/NfcFCardEmulation
 android/nfc/cardemulation/OffHostApduService
 android/nfc/cardemulation/PollingFrame
