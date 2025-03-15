@@ -772,6 +772,7 @@ Landroid/nfc/tech/TagTechnology;->connect()V,public-api,system-api,test-api
 Landroid/nfc/tech/TagTechnology;->getTag()Landroid/nfc/Tag;,public-api,system-api,test-api
 Landroid/nfc/tech/TagTechnology;->isConnected()Z,public-api,system-api,test-api
 Lcom/android/nfc/module/flags/CustomFeatureFlags$$ExternalSyntheticLambda0;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
+Lcom/android/nfc/module/flags/CustomFeatureFlags$$ExternalSyntheticLambda1;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda0;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda10;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/nfc/CustomFeatureFlags$$ExternalSyntheticLambda11;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
@@ -854,6 +855,8 @@ Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheti
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda59;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda5;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda60;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
+Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda61;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
+Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda62;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda6;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda7;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
 Lcom/android/nfc/x/android/permission/flags/CustomFeatureFlags$$ExternalSyntheticLambda8;->test(Ljava/lang/Object;)Z,core-platform-api,public-api,system-api,test-api
