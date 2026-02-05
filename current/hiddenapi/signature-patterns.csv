@@ -39,7 +39,6 @@ android/nfc/NfcVendorNciCallbackListener
 android/nfc/NfcWlcStateListener
 android/nfc/OemLogItems
 android/nfc/PackageAndUser
-android/nfc/RfDiscoverConfig
 android/nfc/RoutingStatus
 android/nfc/RoutingTableAidEntry
 android/nfc/RoutingTableProtocolEntry
