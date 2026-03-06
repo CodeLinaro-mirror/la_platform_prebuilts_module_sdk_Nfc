@@ -160,6 +160,7 @@ Landroid/nfc/NfcAdapter$NfcVendorNciCallback;->onVendorNciResponse(II[B)V,system
 Landroid/nfc/NfcAdapter$OnNdefPushCompleteCallback;->onNdefPushComplete(Landroid/nfc/NfcEvent;)V,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter$OnTagRemovedListener;->onTagRemoved()V,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter$ReaderCallback;->onTagDiscovered(Landroid/nfc/Tag;)V,public-api,system-api,test-api
+Landroid/nfc/NfcAdapter$ReaderCallback;->onTagLost(Landroid/nfc/Tag;)V,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->ACTION_ADAPTER_STATE_CHANGED:Ljava/lang/String;,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->ACTION_CHANGE_TAG_INTENT_PREFERENCE:Ljava/lang/String;,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->ACTION_NDEF_DISCOVERED:Ljava/lang/String;,public-api,system-api,test-api
@@ -176,6 +177,7 @@ Landroid/nfc/NfcAdapter;->EXTRA_ID:Ljava/lang/String;,public-api,system-api,test
 Landroid/nfc/NfcAdapter;->EXTRA_NDEF_MESSAGES:Ljava/lang/String;,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->EXTRA_PREFERRED_PAYMENT_CHANGED_REASON:Ljava/lang/String;,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->EXTRA_READER_PRESENCE_CHECK_DELAY:Ljava/lang/String;,public-api,system-api,test-api
+Landroid/nfc/NfcAdapter;->EXTRA_READER_TECH_A_POLLING_LOOP_ANNOTATION:Ljava/lang/String;,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->EXTRA_RESOLVE_INFOS:Ljava/lang/String;,system-api,test-api
 Landroid/nfc/NfcAdapter;->EXTRA_SECURE_ELEMENT_NAME:Ljava/lang/String;,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->EXTRA_TAG:Ljava/lang/String;,public-api,system-api,test-api
@@ -222,6 +224,7 @@ Landroid/nfc/NfcAdapter;->enableReaderOption(Z)Z,system-api,test-api
 Landroid/nfc/NfcAdapter;->enableSecureNfc(Z)Z,system-api,test-api
 Landroid/nfc/NfcAdapter;->getAdapterState()I,system-api,test-api
 Landroid/nfc/NfcAdapter;->getDefaultAdapter(Landroid/content/Context;)Landroid/nfc/NfcAdapter;,public-api,system-api,test-api
+Landroid/nfc/NfcAdapter;->getGestureExchangeAid()Ljava/lang/String;,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->getNfcAntennaInfo()Landroid/nfc/NfcAntennaInfo;,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->getNfcOemExtension()Landroid/nfc/NfcOemExtension;,system-api,test-api
 Landroid/nfc/NfcAdapter;->getTagIntentAppPreferenceForUser(I)Ljava/util/Map;,system-api,test-api
@@ -234,6 +237,7 @@ Landroid/nfc/NfcAdapter;->isObserveModeEnabled()Z,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->isObserveModeSupported()Z,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->isPowerSavingModeEnabled()Z,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->isPowerSavingModeSupported()Z,public-api,system-api,test-api
+Landroid/nfc/NfcAdapter;->isReaderModeAnnotationSupported()Z,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->isReaderOptionEnabled()Z,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->isReaderOptionSupported()Z,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->isSecureNfcEnabled()Z,public-api,system-api,test-api
@@ -241,6 +245,7 @@ Landroid/nfc/NfcAdapter;->isSecureNfcSupported()Z,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->isTagIntentAllowed()Z,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->isTagIntentAppPreferenceSupported()Z,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->registerControllerAlwaysOnListener(Ljava/util/concurrent/Executor;Landroid/nfc/NfcAdapter$ControllerAlwaysOnListener;)V,system-api,test-api
+Landroid/nfc/NfcAdapter;->registerGestureExchangeReaderCallback(Ljava/util/concurrent/Executor;Landroid/nfc/NfcAdapter$ReaderCallback;)V,system-api,test-api
 Landroid/nfc/NfcAdapter;->registerNfcVendorNciCallback(Ljava/util/concurrent/Executor;Landroid/nfc/NfcAdapter$NfcVendorNciCallback;)V,system-api,test-api
 Landroid/nfc/NfcAdapter;->removeNfcUnlockHandler(Landroid/nfc/NfcAdapter$NfcUnlockHandler;)Z,system-api,test-api
 Landroid/nfc/NfcAdapter;->resetDiscoveryTechnology(Landroid/app/Activity;)V,public-api,system-api,test-api
@@ -252,6 +257,7 @@ Landroid/nfc/NfcAdapter;->setPowerSavingMode(Z)V,public-api,system-api,test-api
 Landroid/nfc/NfcAdapter;->setReaderModePollingEnabled(Z)V,system-api,test-api
 Landroid/nfc/NfcAdapter;->setTagIntentAppPreferenceForUser(ILjava/lang/String;Z)I,system-api,test-api
 Landroid/nfc/NfcAdapter;->unregisterControllerAlwaysOnListener(Landroid/nfc/NfcAdapter$ControllerAlwaysOnListener;)V,system-api,test-api
+Landroid/nfc/NfcAdapter;->unregisterGestureExchangeReaderCallback(Landroid/nfc/NfcAdapter$ReaderCallback;)V,system-api,test-api
 Landroid/nfc/NfcAdapter;->unregisterNfcVendorNciCallback(Landroid/nfc/NfcAdapter$NfcVendorNciCallback;)V,system-api,test-api
 Landroid/nfc/NfcAntennaInfo$1;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;,public-api,system-api,test-api
 Landroid/nfc/NfcAntennaInfo$1;->newArray(I)[Ljava/lang/Object;,public-api,system-api,test-api

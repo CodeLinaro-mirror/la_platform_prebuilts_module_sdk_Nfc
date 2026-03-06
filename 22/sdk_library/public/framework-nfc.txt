@@ -72,6 +72,7 @@ package android.nfc {
     method public void enableForegroundDispatch(android.app.Activity, android.app.PendingIntent, android.content.IntentFilter[], String[][]);
     method public void enableReaderMode(android.app.Activity, android.nfc.NfcAdapter.ReaderCallback, int, android.os.Bundle);
     method public static android.nfc.NfcAdapter getDefaultAdapter(android.content.Context);
+    method @Nullable @RequiresPermission(android.Manifest.permission.PERFORM_GESTURE_EXCHANGE) public String getGestureExchangeAid();
     method @Nullable public android.nfc.NfcAntennaInfo getNfcAntennaInfo();
     method public boolean ignore(android.nfc.Tag, int, android.nfc.NfcAdapter.OnTagRemovedListener, android.os.Handler);
     method public boolean isEnabled();
@@ -80,6 +81,7 @@ package android.nfc {
     method public boolean isObserveModeSupported();
     method public boolean isPowerSavingModeEnabled();
     method public boolean isPowerSavingModeSupported();
+    method public boolean isReaderModeAnnotationSupported();
     method public boolean isReaderOptionEnabled();
     method public boolean isReaderOptionSupported();
     method public boolean isSecureNfcEnabled();
@@ -104,6 +106,7 @@ package android.nfc {
     field public static final String EXTRA_NDEF_MESSAGES = "android.nfc.extra.NDEF_MESSAGES";
     field public static final String EXTRA_PREFERRED_PAYMENT_CHANGED_REASON = "android.nfc.extra.PREFERRED_PAYMENT_CHANGED_REASON";
     field public static final String EXTRA_READER_PRESENCE_CHECK_DELAY = "presence";
+    field public static final String EXTRA_READER_TECH_A_POLLING_LOOP_ANNOTATION = "android.nfc.extra.READER_TECH_A_POLLING_LOOP_ANNOTATION";
     field public static final String EXTRA_SECURE_ELEMENT_NAME = "android.nfc.extra.SECURE_ELEMENT_NAME";
     field public static final String EXTRA_TAG = "android.nfc.extra.TAG";
     field public static final int FLAG_LISTEN_DISABLE = 0; // 0x0
@@ -147,6 +150,7 @@ package android.nfc {
 
   public static interface NfcAdapter.ReaderCallback {
     method public void onTagDiscovered(android.nfc.Tag);
+    method public default void onTagLost(@NonNull android.nfc.Tag);
   }
 
   public final class NfcAntennaInfo implements android.os.Parcelable {
