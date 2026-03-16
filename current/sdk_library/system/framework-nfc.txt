@@ -12,6 +12,7 @@ package android.nfc {
     method @RequiresPermission(android.Manifest.permission.NFC_SET_CONTROLLER_ALWAYS_ON) public boolean isControllerAlwaysOn();
     method @RequiresPermission(android.Manifest.permission.NFC_SET_CONTROLLER_ALWAYS_ON) public boolean isControllerAlwaysOnSupported();
     method @RequiresPermission(android.Manifest.permission.NFC_SET_CONTROLLER_ALWAYS_ON) public void registerControllerAlwaysOnListener(@NonNull java.util.concurrent.Executor, @NonNull android.nfc.NfcAdapter.ControllerAlwaysOnListener);
+    method @RequiresPermission(android.Manifest.permission.PERFORM_GESTURE_EXCHANGE) public void registerGestureExchangeReaderCallback(@NonNull java.util.concurrent.Executor, @NonNull android.nfc.NfcAdapter.ReaderCallback);
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public void registerNfcVendorNciCallback(@NonNull java.util.concurrent.Executor, @NonNull android.nfc.NfcAdapter.NfcVendorNciCallback);
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public boolean removeNfcUnlockHandler(android.nfc.NfcAdapter.NfcUnlockHandler);
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public int sendVendorNciMessage(int, @IntRange(from=0, to=15) int, @IntRange(from=0) int, @NonNull byte[]);
@@ -19,6 +20,7 @@ package android.nfc {
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public void setReaderModePollingEnabled(boolean);
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public int setTagIntentAppPreferenceForUser(int, @NonNull String, boolean);
     method @RequiresPermission(android.Manifest.permission.NFC_SET_CONTROLLER_ALWAYS_ON) public void unregisterControllerAlwaysOnListener(@NonNull android.nfc.NfcAdapter.ControllerAlwaysOnListener);
+    method @RequiresPermission(android.Manifest.permission.PERFORM_GESTURE_EXCHANGE) public void unregisterGestureExchangeReaderCallback(@NonNull android.nfc.NfcAdapter.ReaderCallback);
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public void unregisterNfcVendorNciCallback(@NonNull android.nfc.NfcAdapter.NfcVendorNciCallback);
     field public static final String ACTION_REQUIRE_UNLOCK_FOR_NFC = "android.nfc.action.REQUIRE_UNLOCK_FOR_NFC";
     field @RequiresPermission(android.Manifest.permission.SHOW_CUSTOMIZED_RESOLVER) public static final String ACTION_SHOW_NFC_RESOLVER = "android.nfc.action.SHOW_NFC_RESOLVER";
@@ -53,6 +55,7 @@ package android.nfc {
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public int forceRoutingTableCommit();
     method @NonNull public java.util.Map<java.lang.String,java.lang.Integer> getActiveNfceeList();
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public long getMaxPausePollingTimeoutMills();
+    method @NonNull @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public java.util.List<android.nfc.RfDiscoverConfig> getRfDiscoverConfigurations();
     method @NonNull @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public android.nfc.RoutingStatus getRoutingStatus();
     method @NonNull @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public java.util.List<android.nfc.NfcRoutingTableEntry> getRoutingTable();
     method @NonNull public android.nfc.T4tNdefNfcee getT4tNdefNfcee();
@@ -156,6 +159,25 @@ package android.nfc {
     field public static final int LOG_ACTION_TAG_DETECTED = 3; // 0x3
   }
 
+  public final class RfDiscoverConfig implements android.os.Parcelable {
+    ctor public RfDiscoverConfig(int, @IntRange(from=1, to=10) int);
+    method public int describeContents();
+    method @IntRange(from=1, to=10) public int getFrequency();
+    method public int getTechnologyMode();
+    method public void writeToParcel(@NonNull android.os.Parcel, int);
+    field @NonNull public static final android.os.Parcelable.Creator<android.nfc.RfDiscoverConfig> CREATOR;
+    field public static final int NFC_ACTIVE_LISTEN_MODE = 131; // 0x83
+    field public static final int NFC_ACTIVE_POLL_MODE = 3; // 0x3
+    field public static final int NFC_A_KOVIO_POLL_MODE = 119; // 0x77
+    field public static final int NFC_A_PASSIVE_LISTEN_MODE = 128; // 0x80
+    field public static final int NFC_A_PASSIVE_POLL_MODE = 0; // 0x0
+    field public static final int NFC_B_PASSIVE_LISTEN_MODE = 129; // 0x81
+    field public static final int NFC_B_PASSIVE_POLL_MODE = 1; // 0x1
+    field public static final int NFC_F_PASSIVE_LISTEN_MODE = 130; // 0x82
+    field public static final int NFC_F_PASSIVE_POLL_MODE = 2; // 0x2
+    field public static final int NFC_V_PASSIVE_POLL_MODE = 6; // 0x6
+  }
+
   public class RoutingStatus {
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public int getDefaultFelicaRoute();
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public int getDefaultIsoDepRoute();
@@ -238,6 +260,8 @@ package android.nfc.cardemulation {
     method @NonNull public java.util.List<android.nfc.cardemulation.ApduServiceInfo> getServices(@NonNull String, int);
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public void overrideRoutingTable(@NonNull android.app.Activity, int, int);
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public void recoverRoutingTable(@NonNull android.app.Activity);
+    method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public boolean setDefaultForNextTap(@NonNull android.content.ComponentName);
+    method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public boolean setDefaultForNextTap(int, @NonNull android.content.ComponentName);
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public int setDefaultNfcSubscriptionId(int);
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public int setServiceEnabledForCategoryOther(@NonNull android.content.ComponentName, boolean);
     field public static final int SET_SERVICE_ENABLED_STATUS_FAILURE_ALREADY_SET = 3; // 0x3
