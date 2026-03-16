@@ -64,6 +64,7 @@ package android.nfc {
   }
 
   public final class NfcAdapter {
+    method public void allowOneTransaction();
     method @RequiresPermission(android.Manifest.permission.WRITE_SECURE_SETTINGS) public boolean disable();
     method public void disableForegroundDispatch(android.app.Activity);
     method public void disableReaderMode(android.app.Activity);
@@ -71,6 +72,7 @@ package android.nfc {
     method public void enableForegroundDispatch(android.app.Activity, android.app.PendingIntent, android.content.IntentFilter[], String[][]);
     method public void enableReaderMode(android.app.Activity, android.nfc.NfcAdapter.ReaderCallback, int, android.os.Bundle);
     method public static android.nfc.NfcAdapter getDefaultAdapter(android.content.Context);
+    method @Nullable @RequiresPermission(android.Manifest.permission.PERFORM_GESTURE_EXCHANGE) public String getGestureExchangeAid();
     method @Nullable public android.nfc.NfcAntennaInfo getNfcAntennaInfo();
     method public boolean ignore(android.nfc.Tag, int, android.nfc.NfcAdapter.OnTagRemovedListener, android.os.Handler);
     method public boolean isEnabled();
@@ -79,21 +81,22 @@ package android.nfc {
     method public boolean isObserveModeSupported();
     method public boolean isPowerSavingModeEnabled();
     method public boolean isPowerSavingModeSupported();
+    method public boolean isReaderModeAnnotationSupported();
     method public boolean isReaderOptionEnabled();
     method public boolean isReaderOptionSupported();
     method public boolean isSecureNfcEnabled();
     method public boolean isSecureNfcSupported();
     method public boolean isTagIntentAllowed();
     method public boolean isTagIntentAppPreferenceSupported();
-    method public void resetDiscoveryTechnology(@NonNull android.app.Activity);
-    method public void setDiscoveryTechnology(@NonNull android.app.Activity, int, int);
+    method public void resetDiscoveryTechnology(@Nullable android.app.Activity);
+    method public void setDiscoveryTechnology(@Nullable android.app.Activity, int, int);
     method public boolean setObserveModeEnabled(boolean);
     method @RequiresPermission(android.Manifest.permission.NFC_SET_CONTROLLER_ALWAYS_ON) public void setPowerSavingMode(boolean);
     field public static final String ACTION_ADAPTER_STATE_CHANGED = "android.nfc.action.ADAPTER_STATE_CHANGED";
     field public static final String ACTION_CHANGE_TAG_INTENT_PREFERENCE = "android.nfc.action.CHANGE_TAG_INTENT_PREFERENCE";
     field public static final String ACTION_NDEF_DISCOVERED = "android.nfc.action.NDEF_DISCOVERED";
     field @RequiresPermission(android.Manifest.permission.NFC_PREFERRED_PAYMENT_INFO) public static final String ACTION_PREFERRED_PAYMENT_CHANGED = "android.nfc.action.PREFERRED_PAYMENT_CHANGED";
-    field public static final String ACTION_TAG_DISCOVERED = "android.nfc.action.TAG_DISCOVERED";
+    field @Deprecated public static final String ACTION_TAG_DISCOVERED = "android.nfc.action.TAG_DISCOVERED";
     field public static final String ACTION_TECH_DISCOVERED = "android.nfc.action.TECH_DISCOVERED";
     field @RequiresPermission(android.Manifest.permission.NFC_TRANSACTION_EVENT) public static final String ACTION_TRANSACTION_DETECTED = "android.nfc.action.TRANSACTION_DETECTED";
     field public static final String EXTRA_ADAPTER_STATE = "android.nfc.extra.ADAPTER_STATE";
@@ -103,6 +106,7 @@ package android.nfc {
     field public static final String EXTRA_NDEF_MESSAGES = "android.nfc.extra.NDEF_MESSAGES";
     field public static final String EXTRA_PREFERRED_PAYMENT_CHANGED_REASON = "android.nfc.extra.PREFERRED_PAYMENT_CHANGED_REASON";
     field public static final String EXTRA_READER_PRESENCE_CHECK_DELAY = "presence";
+    field public static final String EXTRA_READER_TECH_A_POLLING_LOOP_ANNOTATION = "android.nfc.extra.READER_TECH_A_POLLING_LOOP_ANNOTATION";
     field public static final String EXTRA_SECURE_ELEMENT_NAME = "android.nfc.extra.SECURE_ELEMENT_NAME";
     field public static final String EXTRA_TAG = "android.nfc.extra.TAG";
     field public static final int FLAG_LISTEN_DISABLE = 0; // 0x0
@@ -146,6 +150,7 @@ package android.nfc {
 
   public static interface NfcAdapter.ReaderCallback {
     method public void onTagDiscovered(android.nfc.Tag);
+    method public default void onTagLost(@NonNull android.nfc.Tag);
   }
 
   public final class NfcAntennaInfo implements android.os.Parcelable {
@@ -154,7 +159,7 @@ package android.nfc {
     method @NonNull public java.util.List<android.nfc.AvailableNfcAntenna> getAvailableNfcAntennas();
     method public int getDeviceHeight();
     method public int getDeviceWidth();
-    method public boolean isDeviceFoldable();
+    method @Deprecated public boolean isDeviceFoldable();
     method public void writeToParcel(@NonNull android.os.Parcel, int);
     field @NonNull public static final android.os.Parcelable.Creator<android.nfc.NfcAntennaInfo> CREATOR;
   }
