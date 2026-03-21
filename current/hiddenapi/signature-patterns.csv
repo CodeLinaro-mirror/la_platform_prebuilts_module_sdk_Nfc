@@ -18,7 +18,6 @@ android/nfc/INfcTag
 android/nfc/INfcUnlockHandler
 android/nfc/INfcVendorNciCallback
 android/nfc/INfcWlcStateListener
-android/nfc/IReaderCallback
 android/nfc/IT4tNdefNfcee
 android/nfc/ITagRemovedCallback
 android/nfc/NdefMessage
@@ -31,7 +30,6 @@ android/nfc/NfcApplicationState
 android/nfc/NfcControllerAlwaysOnListener
 android/nfc/NfcEvent
 android/nfc/NfcFrameworkInitializer
-android/nfc/NfcGestureExchangeCallbackListener
 android/nfc/NfcManager
 android/nfc/NfcOemExtension
 android/nfc/NfcRoutingTableEntry
@@ -39,7 +37,6 @@ android/nfc/NfcVendorNciCallbackListener
 android/nfc/NfcWlcStateListener
 android/nfc/OemLogItems
 android/nfc/PackageAndUser
-android/nfc/RfDiscoverConfig
 android/nfc/RoutingStatus
 android/nfc/RoutingTableAidEntry
 android/nfc/RoutingTableProtocolEntry
