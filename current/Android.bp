@@ -23,6 +23,9 @@ prebuilt_bootclasspath_fragment {
             module: "art-bootclasspath-fragment",
         },
     ],
+    dex_preopt: {
+        profile_guided: true,
+    },
     hidden_api: {
         max_target_r_low_priority: ["hiddenapi/hiddenapi-max-target-r-loprio.txt"],
         max_target_o_low_priority: ["hiddenapi/hiddenapi-max-target-o.txt"],
