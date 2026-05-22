@@ -142,8 +142,6 @@ Landroid/nfc/NdefRecord;->toMimeType()Ljava/lang/String;,public-api,system-api,t
 Landroid/nfc/NdefRecord;->toString()Ljava/lang/String;,core-platform-api,public-api,system-api,test-api
 Landroid/nfc/NdefRecord;->toUri()Landroid/net/Uri;,public-api,system-api,test-api
 Landroid/nfc/NdefRecord;->writeToParcel(Landroid/os/Parcel;I)V,public-api,system-api,test-api
-Landroid/nfc/NfcActivityManager$$ExternalSyntheticLambda3;->run()V,core-platform-api,public-api,system-api,test-api
-Landroid/nfc/NfcActivityManager$$ExternalSyntheticLambda5;->run()V,core-platform-api,public-api,system-api,test-api
 Landroid/nfc/NfcActivityManager;->onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V,public-api,system-api,test-api
 Landroid/nfc/NfcActivityManager;->onActivityDestroyed(Landroid/app/Activity;)V,public-api,system-api,test-api
 Landroid/nfc/NfcActivityManager;->onActivityPaused(Landroid/app/Activity;)V,public-api,system-api,test-api
@@ -645,7 +643,6 @@ Landroid/nfc/cardemulation/HostApduService;->SERVICE_META_DATA:Ljava/lang/String
 Landroid/nfc/cardemulation/HostApduService;->notifyUnhandled()V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostApduService;->onBind(Landroid/content/Intent;)Landroid/os/IBinder;,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostApduService;->onDeactivated(I)V,public-api,system-api,test-api
-Landroid/nfc/cardemulation/HostApduService;->onDestroy()V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostApduService;->processCommandApdu([BLandroid/os/Bundle;)[B,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostApduService;->processPollingFrames(Ljava/util/List;)V,public-api,system-api,test-api
 Landroid/nfc/cardemulation/HostApduService;->sendResponseApdu([B)V,public-api,system-api,test-api
